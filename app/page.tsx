@@ -127,6 +127,21 @@ export default function Page() {
           <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[5]}")`, borderRadius: "28px" }} />
           <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[6]}")`, borderRadius: "28px" }} />
         </div>
+        <div className="grid md:grid-cols-12 gap-5 mt-5">
+          <div className="md:col-span-3 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[7]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-3 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[8]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[2/1] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[9]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[2/1] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[10]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-3 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[11]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-3 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[12]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[13]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[14]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[15]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[16]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[17]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[18]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-8 aspect-[2/1] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[19]}")`, borderRadius: "28px" }} />
+        </div>
       </section>
 
       {/* STORY — large editorial block */}
