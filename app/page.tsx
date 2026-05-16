@@ -1,145 +1,181 @@
 // @ts-nocheck
 "use client";
 
-import { Fraunces, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import content from "../data/content.json";
 
-const display = Fraunces({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
-const body = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] });
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
-const ACCENT = "#A0521F";
-const ACCENT_DARK = "#5A2D0E";
-const BG = "#F2EFE9";
-const BG_DARK = "#1F1F1F";
-const TEXT = "#1F1F1F";
-const TEXT_MUTED = "#6B655E";
+// App Store Style Landing — swiss minimal, big feature blocks
+const INK = "#0F0F0F";
+const STONE = "#F4F1ED";
+const STONE_DARK = "#E8E3DC";
+const WALNUT = "#5C3A21";
+const BRASS = "#B08D57";
 
 export default function Page() {
   const phoneTel = "tel:" + content.contact.phone.replace(/[^0-9]/g, "");
-  const mapUrl =
-    "https://maps.google.com/maps?output=embed&q=" +
-    encodeURIComponent(content.contact.mapEmbedQuery);
+  const mapUrl = "https://maps.google.com/maps?output=embed&q=" + encodeURIComponent(content.contact.mapEmbedQuery);
 
   return (
-    <main className={body.className} style={{ backgroundColor: BG, color: TEXT, minHeight: "100vh" }}>
+    <main className={inter.className} style={{ backgroundColor: STONE, color: INK, minHeight: "100vh" }}>
       <style jsx global>{`
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-up { animation: fadeUp 0.9s ease-out forwards; }
-        .fade-up-d1 { animation: fadeUp 0.9s 0.2s ease-out both; }
-        .fade-up-d2 { animation: fadeUp 0.9s 0.4s ease-out both; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+        .fade-up { animation: fadeUp 0.9s cubic-bezier(.2,.9,.2,1) forwards; }
+        .fade-up-d1 { animation: fadeUp 0.9s 0.15s cubic-bezier(.2,.9,.2,1) both; }
+        .fade-up-d2 { animation: fadeUp 0.9s 0.3s cubic-bezier(.2,.9,.2,1) both; }
+        .scale-in { animation: scaleIn 1s cubic-bezier(.2,.9,.2,1) forwards; }
       `}</style>
 
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(242,239,233,0.92)", borderBottom: `1px solid ${TEXT}10` }}>
-        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
-          <span className={display.className} style={{ fontSize: "1.3rem", fontWeight: 500, color: TEXT, letterSpacing: "-0.02em" }}>Urban Habitat</span>
-          <div className="flex items-center gap-8">
-            <a href="#collection" className="hidden md:inline text-sm hover:opacity-70">Collection</a>
-            <a href="#reviews" className="hidden md:inline text-sm hover:opacity-70">Reviews</a>
-            <a href="#visit" className="hidden md:inline text-sm hover:opacity-70">Visit</a>
-            <a href={phoneTel} className="px-6 py-2.5 text-sm font-medium transition-all hover:bg-black hover:text-white" style={{ border: `1.5px solid ${TEXT}`, color: TEXT }}>Visit Showroom</a>
+      <nav className="sticky top-0 z-50 backdrop-blur-xl" style={{ backgroundColor: STONE + "EE", borderBottom: `1px solid ${INK}10` }}>
+        <div className="max-w-[1500px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+          <span style={{ fontSize: "1.2rem", fontWeight: 600, color: INK, letterSpacing: "-0.04em" }}>Urban Habitat</span>
+          <div className="flex items-center gap-7">
+            <a href="#collection" className="hidden md:inline text-sm font-medium hover:opacity-60 transition-opacity">Collection</a>
+            <a href="#story" className="hidden md:inline text-sm font-medium hover:opacity-60 transition-opacity">Story</a>
+            <a href="#visit" className="hidden md:inline text-sm font-medium hover:opacity-60 transition-opacity">Visit</a>
+            <a href={phoneTel} className="px-5 py-2 text-sm font-medium transition-transform hover:scale-105" style={{ backgroundColor: INK, color: STONE, borderRadius: "999px" }}>Visit Showroom</a>
           </div>
         </div>
       </nav>
 
-      <section className="relative min-h-screen flex items-end pb-24 pt-32 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url("${content.hero.image}")` }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(31,31,31,0.0) 0%, rgba(31,31,31,0.1) 50%, rgba(31,31,31,0.85) 100%)" }} />
-        <div className="relative max-w-7xl mx-auto px-8 z-10 grid md:grid-cols-12 gap-8 items-end w-full fade-up">
-          <div className="md:col-span-8">
-            <p className="uppercase tracking-[0.4em] text-xs font-medium mb-6" style={{ color: "rgba(255,255,255,0.75)" }}>Burbank Showroom • By appointment or walk-in</p>
-            <h1 className={display.className} style={{ fontSize: "clamp(3rem, 9vw, 7rem)", color: "white", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.04em" }}>{content.hero.heading}</h1>
+      {/* HERO — App Store style: massive title, single product card */}
+      <section className="pt-20 pb-12 md:pt-32 md:pb-20">
+        <div className="max-w-[1500px] mx-auto px-6 md:px-10 text-center fade-up">
+          <p className="text-xs font-medium tracking-[0.4em] uppercase mb-7" style={{ color: WALNUT }}>BURBANK · FAMILY-OWNED · SINCE OPENING</p>
+          <h1 style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", fontWeight: 700, color: INK, lineHeight: 0.95, letterSpacing: "-0.05em" }}>
+            Furniture,<br />
+            <span style={{ fontWeight: 300, fontStyle: "italic" }}>considered.</span>
+          </h1>
+          <p className="mt-10 max-w-2xl mx-auto text-xl md:text-2xl fade-up-d1" style={{ color: `${INK}99`, lineHeight: 1.4, fontWeight: 400 }}>
+            {content.hero.subheading}
+          </p>
+          <div className="mt-12 flex flex-wrap gap-3 justify-center fade-up-d2">
+            <a href={content.hero.ctaLink} className="px-9 py-4 text-base font-medium transition-transform hover:scale-105" style={{ backgroundColor: INK, color: STONE, borderRadius: "999px" }}>{content.hero.ctaText}</a>
+            <a href="#collection" className="px-9 py-4 text-base font-medium transition-all" style={{ color: INK, border: `1.5px solid ${INK}40`, borderRadius: "999px" }}>Browse Collection ↓</a>
           </div>
-          <div className="md:col-span-4 md:pl-8 fade-up-d1">
-            <p className="text-lg" style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.6 }}>{content.hero.subheading}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href={content.hero.ctaLink} className="px-9 py-4 bg-white text-black font-medium transition-transform hover:scale-105">{content.hero.ctaText}</a>
-            </div>
-          </div>
+        </div>
+        <div className="max-w-[1300px] mx-auto px-6 md:px-10 mt-20 scale-in">
+          <div className="aspect-[16/9] bg-cover bg-center" style={{ backgroundImage: `url("${content.hero.image}")`, borderRadius: "32px", boxShadow: `0 30px 60px ${INK}22` }} />
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-8 py-28 md:py-40 text-center">
-        <p className="uppercase tracking-[0.4em] text-xs font-medium mb-6" style={{ color: ACCENT }}>About</p>
-        <h2 className={display.className} style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 400, color: TEXT, lineHeight: 1.1, letterSpacing: "-0.02em" }}>{content.about.heading}</h2>
-        <div className="mt-10 space-y-6 text-lg leading-relaxed" style={{ color: TEXT_MUTED }}>
-          {content.about.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
-        </div>
-      </section>
-
-      <section id="collection" className="py-28 md:py-40" style={{ backgroundColor: BG_DARK, color: BG }}>
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="mb-20 max-w-3xl">
-            <p className="uppercase tracking-[0.4em] text-xs font-medium mb-5" style={{ color: ACCENT }}>The collection</p>
-            <h2 className={display.className} style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 400, color: BG, lineHeight: 1.0, letterSpacing: "-0.03em" }}>Six categories. Hundreds of pieces. Zero compromises.</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
-            {content.services.map((s, i) => (
-              <div key={i} className="border-t pt-7" style={{ borderColor: `${BG}33` }}>
-                <p className={display.className} style={{ fontSize: "0.85rem", color: ACCENT, fontWeight: 500 }}>0{i + 1}</p>
-                <h3 className={display.className} style={{ fontWeight: 400, fontSize: "1.85rem", color: BG, marginTop: "0.5rem", letterSpacing: "-0.02em" }}>{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed" style={{ color: "rgba(242,239,233,0.65)" }}>{s.description}</p>
-                {s.price && <p className="mt-4 text-sm font-medium" style={{ color: ACCENT }}>{s.price}</p>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="max-w-7xl mx-auto px-8 py-28 md:py-40">
-        <div className="mb-16 max-w-2xl">
-          <p className="uppercase tracking-[0.4em] text-xs font-medium mb-5" style={{ color: ACCENT }}>From customers</p>
-          <h2 className={display.className} style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 400, color: TEXT, lineHeight: 1.0, letterSpacing: "-0.03em" }}>The work speaks.</h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-x-10 gap-y-12">
-          {content.reviews.map((r, i) => (
-            <div key={i}>
-              <div className="flex gap-1 mb-4" style={{ color: ACCENT }}>
-                {Array.from({ length: r.rating || 5 }).map((_, j) => <span key={j}>★</span>)}
-              </div>
-              <p className={display.className} style={{ fontSize: "1.2rem", lineHeight: 1.5, color: TEXT, fontWeight: 400, letterSpacing: "-0.01em" }}>"{r.text}"</p>
-              <p className="mt-6 text-xs uppercase tracking-widest font-medium" style={{ color: ACCENT }}>— {r.name}</p>
+      {/* FEATURE STAT BAND — App Store style */}
+      <section className="max-w-[1500px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { n: "4.9", l: "Average rating", sub: "from 97 customer reviews" },
+            { n: "0%", l: "Veneer shortcuts", sub: "solid wood, hand-built frames" },
+            { n: "7 days", l: "Open every week", sub: "Sun 12–6, Mon–Sat 10–7" },
+          ].map((f, i) => (
+            <div key={i} className="p-10" style={{ backgroundColor: STONE_DARK, borderRadius: "28px" }}>
+              <p style={{ fontSize: "clamp(3.5rem, 6vw, 5rem)", fontWeight: 700, color: INK, lineHeight: 1, letterSpacing: "-0.05em" }}>{f.n}</p>
+              <p className="mt-3 text-base font-semibold" style={{ color: INK }}>{f.l}</p>
+              <p className="mt-1 text-sm" style={{ color: `${INK}77` }}>{f.sub}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="visit" className="py-28 md:py-40" style={{ backgroundColor: "#E8E4DA", borderTop: `1px solid ${TEXT}15` }}>
-        <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-start">
+      {/* COLLECTION — App Store grid */}
+      <section id="collection" className="max-w-[1500px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="flex items-end justify-between mb-14">
           <div>
-            <p className="uppercase tracking-[0.4em] text-xs font-medium mb-5" style={{ color: ACCENT }}>Visit</p>
-            <h2 className={display.className} style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 400, color: TEXT, lineHeight: 1.0, letterSpacing: "-0.03em" }}>1055 N Victory Pl.</h2>
-            <p className="mt-8 text-lg" style={{ color: TEXT_MUTED }}>{content.contact.address}</p>
-            <a href={phoneTel} className={display.className + " block mt-2 text-3xl font-medium transition-opacity hover:opacity-70"} style={{ color: ACCENT, letterSpacing: "-0.02em" }}>{content.contact.phone}</a>
-            <table className="mt-12 w-full text-sm">
-              <tbody>
-                {Object.entries(content.contact.hours).map(([day, time]) => (
-                  <tr key={day} style={{ borderBottom: `1px solid ${TEXT}15` }}>
-                    <td className="py-4 font-medium uppercase tracking-wider text-xs">{day}</td>
-                    <td className="py-4 text-right" style={{ color: TEXT_MUTED }}>{String(time)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <p className="text-xs font-medium tracking-[0.4em] uppercase mb-4" style={{ color: WALNUT }}>The Collection</p>
+            <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 700, color: INK, lineHeight: 1.0, letterSpacing: "-0.04em" }}>Six categories.</h2>
           </div>
-          <div className="overflow-hidden" style={{ minHeight: "520px", border: `1px solid ${TEXT}22` }}>
-            <iframe title="Urban Habitat Location" width="100%" height="100%" loading="lazy" style={{ border: 0, minHeight: "520px" }} referrerPolicy="no-referrer-when-downgrade" src={mapUrl} />
+          <p className="hidden md:block text-sm font-medium" style={{ color: `${INK}77` }}>Hand-picked, every piece.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {content.services.map((s, i) => (
+            <div key={i} className="p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group" style={{ backgroundColor: STONE_DARK, borderRadius: "24px", minHeight: "300px" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div style={{ width: "44px", height: "44px", backgroundColor: INK, color: STONE, borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.9rem" }}>{i + 1}</div>
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: WALNUT }}>Category</span>
+              </div>
+              <h3 style={{ fontWeight: 700, fontSize: "1.7rem", color: INK, lineHeight: 1.1, letterSpacing: "-0.02em" }}>{s.title}</h3>
+              <p className="mt-3 text-base leading-relaxed" style={{ color: `${INK}88` }}>{s.description}</p>
+              {s.price && (
+                <div className="mt-6 pt-6" style={{ borderTop: `1px solid ${INK}15` }}>
+                  <p className="text-base font-semibold" style={{ color: INK, letterSpacing: "-0.01em" }}>{s.price}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* STORY — large editorial block */}
+      <section id="story" className="py-20 md:py-32" style={{ backgroundColor: INK, color: STONE }}>
+        <div className="max-w-[1300px] mx-auto px-6 md:px-10">
+          <p className="text-xs font-medium tracking-[0.4em] uppercase mb-6" style={{ color: BRASS }}>The Studio</p>
+          <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 700, color: STONE, lineHeight: 0.95, letterSpacing: "-0.04em", maxWidth: "900px" }}>
+            <span style={{ color: BRASS }}>The right piece</span> finds its room.
+          </h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-12">
+            {content.about.paragraphs.map((p, i) => (
+              <p key={i} className="text-xl md:text-2xl" style={{ color: `${STONE}cc`, lineHeight: 1.5, fontWeight: 300 }}>{p}</p>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-8 py-28 md:py-40 text-center">
-        <h3 className={display.className} style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 300, color: TEXT, lineHeight: 1.0, letterSpacing: "-0.03em" }}>Something worth keeping.</h3>
-        <a href={phoneTel} className="inline-block mt-12 px-12 py-5 font-medium text-base transition-all hover:bg-black hover:text-white" style={{ border: `1.5px solid ${TEXT}`, color: TEXT }}>{content.contact.phone}</a>
+      {/* REVIEWS — App-store-style featured */}
+      <section className="max-w-[1500px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <p className="text-xs font-medium tracking-[0.4em] uppercase mb-6" style={{ color: WALNUT }}>Customer Reviews</p>
+        <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 700, color: INK, lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: "3rem" }}>
+          The work speaks. <span style={{ color: WALNUT }}>97 times.</span>
+        </h2>
+        <div className="grid md:grid-cols-3 gap-5">
+          {content.reviews.map((r, i) => (
+            <div key={i} className="p-8" style={{ backgroundColor: STONE_DARK, borderRadius: "24px" }}>
+              <div className="flex gap-1 mb-5 text-base" style={{ color: BRASS }}>{Array.from({ length: r.rating || 5 }).map((_, j) => <span key={j}>★</span>)}</div>
+              <p className="text-base leading-relaxed" style={{ color: INK, fontWeight: 500 }}>&ldquo;{r.text}&rdquo;</p>
+              <p className="mt-7 text-sm font-semibold" style={{ color: WALNUT }}>{r.name}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <footer style={{ borderTop: `1px solid ${TEXT}15`, backgroundColor: BG }}>
-        <div className="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-sm" style={{ color: TEXT_MUTED }}>
-          <div>
-            <p className={display.className} style={{ fontSize: "1.5rem", fontWeight: 500, color: TEXT, letterSpacing: "-0.02em" }}>Urban Habitat</p>
-            <p className="mt-3">{content.contact.address}</p>
-            <p className="mt-1"><a href={phoneTel} className="hover:text-black">{content.contact.phone}</a></p>
+      {/* VISIT */}
+      <section id="visit" className="py-20 md:py-28" style={{ backgroundColor: STONE_DARK }}>
+        <div className="max-w-[1500px] mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-10 items-start">
+          <div className="md:col-span-5">
+            <p className="text-xs font-medium tracking-[0.4em] uppercase mb-6" style={{ color: WALNUT }}>Showroom</p>
+            <h2 style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 700, color: INK, lineHeight: 1.0, letterSpacing: "-0.04em" }}>
+              1055 N Victory Pl.
+            </h2>
+            <p className="mt-7 text-lg" style={{ color: `${INK}88` }}>{content.contact.address}</p>
+            <a href={phoneTel} className="block mt-2 font-semibold transition-opacity hover:opacity-70" style={{ fontSize: "clamp(2rem, 4vw, 2.75rem)", color: INK, letterSpacing: "-0.03em", lineHeight: 1 }}>{content.contact.phone}</a>
+            <div className="mt-10 space-y-1">
+              {Object.entries(content.contact.hours).map(([day, time]) => (
+                <div key={day} className="flex justify-between py-3 text-sm" style={{ borderBottom: `1px solid ${INK}15` }}>
+                  <span className="font-medium uppercase tracking-widest text-xs" style={{ color: INK }}>{day}</span>
+                  <span style={{ color: `${INK}77` }}>{String(time)}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="text-xs uppercase tracking-widest">© {new Date().getFullYear()}</div>
+          <div className="md:col-span-7" style={{ borderRadius: "28px", overflow: "hidden", minHeight: "520px", boxShadow: `0 20px 50px ${INK}1A` }}>
+            <iframe title="Urban Habitat" width="100%" height="100%" loading="lazy" style={{ border: 0, minHeight: "520px" }} referrerPolicy="no-referrer-when-downgrade" src={mapUrl} />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-[1500px] mx-auto px-6 md:px-10 py-20 md:py-32 text-center">
+        <h3 style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", fontWeight: 700, color: INK, lineHeight: 0.95, letterSpacing: "-0.04em" }}>
+          Something worth<br /><span style={{ fontStyle: "italic", fontWeight: 300 }}>keeping.</span>
+        </h3>
+        <a href={phoneTel} className="inline-block mt-12 px-12 py-5 text-base font-medium transition-transform hover:scale-105" style={{ backgroundColor: INK, color: STONE, borderRadius: "999px" }}>Visit · {content.contact.phone}</a>
+      </section>
+
+      <footer style={{ backgroundColor: STONE, borderTop: `1px solid ${INK}15` }}>
+        <div className="max-w-[1500px] mx-auto px-6 md:px-10 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm" style={{ color: `${INK}88` }}>
+          <p style={{ fontWeight: 600, fontSize: "1.1rem", color: INK }}>Urban Habitat</p>
+          <p>{content.contact.address}</p>
+          <p className="text-xs uppercase tracking-widest">© {new Date().getFullYear()}</p>
         </div>
       </footer>
     </main>
