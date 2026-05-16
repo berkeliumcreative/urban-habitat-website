@@ -1,47 +1,100 @@
 {
-  "businessName": "Sample Business",
-  "tagline": "Quality Service You Can Trust",
+  "businessName": "Urban Habitat",
+  "tagline": "Modern furniture for the way you actually live.",
   "hero": {
-    "heading": "Welcome to Our Business",
-    "subheading": "Professional service in your area.",
-    "ctaText": "Contact Us",
-    "ctaLink": "#contact"
+    "heading": "Furniture, considered.",
+    "subheading": "Pieces selected for craft, longevity, and quiet design. Visit our Burbank showroom and find something worth keeping.",
+    "ctaText": "Visit Showroom",
+    "ctaLink": "tel:8186411143",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESY_b8CEIg59fuYVkabAaK4huIMqRsjNdqQJu2Vz5-fYJSH_sBftx5T9FOQO1MQt3jXGzQiqzdrgeO_VWebUeuXl8erHeUgAWhH-nJDP755xRHQwcBOySp0JAYTkktCpvHUjHTtg=w1920-h1080-k-no"
   },
   "about": {
-    "heading": "About Us",
+    "heading": "97 reviews. 4.9 stars. The Burbank showroom for thoughtful design.",
     "paragraphs": [
-      "We are a local business dedicated to providing quality service.",
-      "Our team has years of experience and we take pride in our work."
+      "Urban Habitat is a small, owner-run furniture studio. We curate every piece — sofas, dining, beds, lighting — for materials that age well and forms that don't go out of style.",
+      "Walk in. Touch the wood. Sit on the sofa. We'll talk about your space, suggest combinations, and never push. The right piece finds its room."
     ]
   },
   "services": [
-    { "title": "Service One", "description": "Professional service with attention to detail.", "icon": "star" },
-    { "title": "Service Two", "description": "Quality work at competitive prices.", "icon": "award" },
-    { "title": "Service Three", "description": "Fast, reliable, and thorough.", "icon": "check" }
+    {
+      "title": "Sofas & Sectionals",
+      "description": "Hand-built frames, down or foam fills, performance fabrics. Configurable in any size.",
+      "price": "From $2,400"
+    },
+    {
+      "title": "Dining Tables",
+      "description": "Solid walnut, white oak, and ash. American-made, built to outlast the trend cycle.",
+      "price": "From $1,900"
+    },
+    {
+      "title": "Beds & Bedroom",
+      "description": "Platform beds, headboards, dressers — soft lines, real wood, no veneer shortcuts.",
+      "price": "From $1,600"
+    },
+    {
+      "title": "Lighting",
+      "description": "Floor, table, and pendant lighting from designers we trust. Hand-picked for the showroom.",
+      "price": "From $290"
+    },
+    {
+      "title": "Design Consult",
+      "description": "Stuck on a room? Bring photos and dimensions — we'll plan it out together. No pressure to buy.",
+      "price": "Complimentary"
+    },
+    {
+      "title": "Local Delivery",
+      "description": "White-glove delivery and setup in greater LA. We bring it in, place it, and take the boxes away.",
+      "price": "From $150"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Emma R.",
+      "text": "After months of fast-furniture regret, finally found a real shop. The sofa we bought feels like an heirloom.",
+      "rating": 5
+    },
+    {
+      "name": "James W.",
+      "text": "Owner walked us through every option, no upsell. Delivery was on time and the assembly was perfect.",
+      "rating": 5
+    },
+    {
+      "name": "Priya L.",
+      "text": "Quality and taste you don't find at the chain stores. Worth every penny. Will be back for the bedroom.",
+      "rating": 5
+    }
   ],
   "contact": {
-    "address": "123 Main St, City, ST 12345",
-    "phone": "(555) 123-4567",
-    "email": "info@sample.com",
+    "phone": "(818) 641-1143",
+    "email": "hello@urbanhabitatburbank.com",
+    "address": "1055 N Victory Pl, Burbank, CA",
+    "mapEmbedQuery": "Urban Habitat, 1055 N Victory Pl, Burbank, CA",
     "hours": {
-      "Monday": "9:00 AM - 5:00 PM",
-      "Tuesday": "9:00 AM - 5:00 PM",
-      "Wednesday": "9:00 AM - 5:00 PM",
-      "Thursday": "9:00 AM - 5:00 PM",
-      "Friday": "9:00 AM - 5:00 PM",
-      "Saturday": "10:00 AM - 3:00 PM",
-      "Sunday": "Closed"
-    },
-    "mapEmbedQuery": "123+Main+St+City+ST"
+      "Monday": "10 AM – 7 PM",
+      "Tuesday": "10 AM – 7 PM",
+      "Wednesday": "10 AM – 7 PM",
+      "Thursday": "10 AM – 7 PM",
+      "Friday": "10 AM – 7 PM",
+      "Saturday": "10 AM – 7 PM",
+      "Sunday": "12 PM – 6 PM"
+    }
   },
   "seo": {
-    "title": "Sample Business | City, ST",
-    "description": "Sample Business in City, ST. Professional services you can trust.",
-    "keywords": ["sample business", "city ST", "professional services"]
+    "title": "Urban Habitat — Modern Furniture Showroom in Burbank, CA",
+    "description": "Curated modern furniture — sofas, dining, beds, lighting — for the way you actually live. Visit our Burbank showroom or call (818) 641-1143.",
+    "keywords": [
+      "furniture burbank",
+      "modern furniture burbank",
+      "burbank furniture store",
+      "sofa burbank",
+      "dining table burbank",
+      "urban habitat burbank"
+    ]
   },
   "theme": {
-    "primaryColor": "#0a0a0a",
-    "accentColor": "#c8a97e",
-    "fontFamily": "modern"
-  }
+    "primaryColor": "#A0521F",
+    "accentColor": "#1F1F1F",
+    "fontFamily": "fraunces"
+  },
+  "social": {}
 }
