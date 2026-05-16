@@ -13,6 +13,9 @@ const STONE_DARK = "#E8E3DC";
 const WALNUT = "#5C3A21";
 const BRASS = "#B08D57";
 
+
+const GALLERY = ["https://lh3.googleusercontent.com/gps-cs-s/APNQkAESY_b8CEIg59fuYVkabAaK4huIMqRsjNdqQJu2Vz5-fYJSH_sBftx5T9FOQO1MQt3jXGzQiqzdrgeO_VWebUeuXl8erHeUgAWhH-nJDP755xRHQwcBOySp0JAYTkktCpvHUjHTtg=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAEFiZNrJszxpxT9DHZsZRzwJaxLzD_NsMHAYqWyIHr6vA7RE8SaQA0WMMMu_17X3l-A0uRJSEBVkSs_Pozor3ae4xP7aypwYr2JUhLsbvw08nPmiDrGPBS1Gers8lc0_F9BVqmH=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAF7UN5FmImBzTWjfw12FsRFmuTmDlN9-S_dgKGd9sUbkm3_qd-O6GDrb3XwVkQ4veOj36xVGSxdN5ahj9aAq88kEJUilTme8r8sJSpjTURo3B-3Kjt3WsSijmgS8BNz8cLnH9t8=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAEx1vI5uo-5gAfbzK8HOAqg6Dtw88NRN-UjOLdy3zRt5cLPhnoxMdo1ufWU2X0bElO3L5R5DGLM8eyGjlglhg1o-uKpalf8_QgLTHmsvkOc3QzSFUvhgpizNAKWFnhYZQgX2JjkAQ=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlOo9NjLzsGwqgJR--aPqMTl7q8EdzCy2dM-E5mNBIerRWYjKTkyytbD2vYL7E4XczJqUMmqbWYfKEZLOfX7EFfMwkOp8ffuiIGe76K60nr7TPeO4oxai26cRNdtOM2500wU5_=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTtbsk_5oL-XrNHN16Xq95fOo9YZPGoCWSNe6cHrgoNIQjq_gGCdFPZjzHiaPXVVkMDLgvKDTRXsgLrMxOLOa_Fzyb8VDYssy2vsClh7JdawDi9mRz4P32Spc0uMUt2wgSLeCLWA=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAE4qNBKLSVKFVBb9Y0EA0dQEcf-Yk3WTIOpdpvX3RBWqmhgDRMr4cPOm-Or8a38jpITyIui7YeVaafVNFy-00yCdCxUvm-Jd9Ko2F8DLheSGiYUWj2z5NKi-ptpdyvpY1udz9sp0Q=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAEdottiXWglh1LYMhZwxpc3PFUfim50sOuZWxGzXy-HA--Q5ONvXSKTeAoft9B3zLyDhGNHczAW17nNiXbxRdwPVghNn5ztCEaCmY5C0GeR-d-eTw0b7EMKyxANEGdHR47kjNUKyA=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnoA1L92tEUQoTuujkv6JRqs98JclcTiKWcV6VKQfQmYdMtuzoAY6fxEtvoh9kDn4CnpqH-f8iJl0JOHv0q0d41DTiTKndt3_51pWuAXVPuQwCZlqEXzkuq3riBnc9syN7OOje=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAFIW_2vAQ4iwRC4biiq2c06uWmPLcm4ZVdVaG8m0zeefcm5cqDaRYpG8OjnVz2GwgeMEj9vlIZw9Nh6DcTODRSx3JQ-AmMjGiSBUiErAtIi9-Ut4UX_9kC1dJER-w4J6ZwaxeE_CA=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfENKeWrN0i5qW1dXQblHbNWxsB795okisfryK3-CcghtTnBSiEgA-vuIk6yTxA_wXssp0VZz6tE3-lrdVOpkWEJp9WgNNvaFWUp1TvpcNb0XXjsNOBOBzFi30cevFA4tggwDR=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJfTmifg-pnhVRbPAT3_d4gcMiQeBMNsjIxOJUj_bdI1uciFKzIz3NVMxAHXBUaOefsKoubRCfoAKIo9uELeviITi_QKjnnaFWjZOfU_wziA-9XBeSw4CT3m_E16_NgZzD22OrVA=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_wSf8zYqbGe0GLxl-gVMJ7judv4DYXBfIdJFJIK-ncqbHcTidkUU6qpcB6j_7w-yi2a3u0wUqHQK0ykHIyWakHKCwCZH66CEdolEOyPTYZh5fntD4lbEDkohNaPVBGQfB1Yc=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjQaM6bEMivOk5tEyzMshtqjcjS1l7-a0Db1bEpqRNakO__UigSZ1XKPTpsZOQRSsFPoePt-jK3rbzn_McwuCQOJedBK45Jt_n9TLIrxSBqr_Zr8fP6ixyXm9dwzevlxqubbxC=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOnHyQvEAT6Kcj8sK-R4mkAdc-0cl6KxxFrv3sSxu1phyKkhYUvQjJr6iw2Ms1dgeyrs7LJfwBlUBb26MjuLkWR8p5v_9Ls25GCkwiGLzLc3LYG_d0a47bbicVG_ZqpsHYsQuFxw=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAGL06LR2h7YKHSqkzjppC6McbyknUbFxCxmKXcQYvCWSygrPTHvXjP1j8_00B8gAjIKfdnqm55uMp28X4MY91IVilNz6Aa8LZ7XddaXvObjDkvhKfp3zZkv1Jqx-d1jdR_WqD4=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAHujzV6SiazBtbX5f31HUzS1vFtTLmAfEoAE07uh1qKeGGQtzLUKPmO59kMMjCN3d2oRldHIhmBotV8GQFF6-NslGv3Jt4dPYLiGyprNplivQotaZBtOgBQi-7rXhNiRTWSdD3x=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjOpQr7W_tzV2udUeGkN5F2hnfwGjihHq_Y4ENdqU_BjsrmbkM6qpnogj1dE9tlyOAPgrxKrLmZ3QgXjSb3Osynl1ta_MvBXCtvDwfCXh-XR1fgetN5IF4Kfh6HwC4maXi1PPd1OClmP5g=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZ7JFu92tx2DxAHcofPPTZ5zUlRgP78O45Sx8l3GgnJZJhOTMV1xk4lG-JUn4gjvkos5_OxZjiGU7xk2x19EZu5bwhHeL6hfS1gvEMVojtnIxFNXahPcYZxCBuJrFwyt4hV69vQQ=w1920-h1080-k-no","https://lh3.googleusercontent.com/gps-cs-s/APNQkAHl-4X0JNQgDZjiR_CDcGH7iFKPQhG79_-Umoh-tLbdjVE1LDOMfBcWWrSOAEWFL86q2rrvVjTUEZLzoFstXryoxVIXDkgIFmvDDZd1N311DvvYwXQYu75pDCiclaG6t8YpNtg2=w1920-h1080-k-no"];
+
 export default function Page() {
   const phoneTel = "tel:" + content.contact.phone.replace(/[^0-9]/g, "");
   const mapUrl = "https://maps.google.com/maps?output=embed&q=" + encodeURIComponent(content.contact.mapEmbedQuery);
@@ -103,6 +106,26 @@ export default function Page() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SHOWROOM — featured product grid */}
+      <section className="max-w-[1500px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="flex items-end justify-between mb-14">
+          <div>
+            <p className="text-xs font-medium tracking-[0.4em] uppercase mb-4" style={{ color: WALNUT }}>From the showroom</p>
+            <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 700, color: INK, lineHeight: 1.0, letterSpacing: "-0.04em" }}>This week's floor.</h2>
+          </div>
+          <a href={phoneTel} className="hidden md:block text-sm font-medium hover:opacity-60" style={{ color: WALNUT }}>Call to view →</a>
+        </div>
+        <div className="grid md:grid-cols-12 gap-5">
+          <div className="md:col-span-8 aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[0]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-[3/4] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[1]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[2]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[3]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-4 aspect-square bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[4]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[5]}")`, borderRadius: "28px" }} />
+          <div className="md:col-span-6 aspect-[5/3] bg-cover bg-center" style={{ backgroundImage: `url("${GALLERY[6]}")`, borderRadius: "28px" }} />
         </div>
       </section>
 
